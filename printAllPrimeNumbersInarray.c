@@ -2,25 +2,29 @@
 
 int main(){
 
-    int arr[100],n,i,flag=0,j;
-    printf("please enter the value of n");
+    const int max = 100;
+    int arr[max];
+    int i,j,n,flag=1;
+
+    printf("please enter the number of elements in the array");
     scanf("%d",&n);
+
     for(i=0;i<n;i++){
-        printf("please enter the %dth element of the array",i);
+        printf("please enter the %d element",i);
         scanf("%d",&arr[i]);
     }
 
     for(i=0;i<n;i++){
+        flag =1;
         for(j=2;j<arr[i];j++){
-            if(arr[i]%j==0){
-                flag=1;
-                break;
+            if (arr[i]%j ==0){
+                flag =0;
             }
         }
-        if(flag==0){
-            printf("%d \n",arr[i]);
+        if(flag ==1){
+            printf("%d \t ",arr[i]);
         }
-        flag=0;
+
     }
 
     return 0;
