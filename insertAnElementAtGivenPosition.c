@@ -2,35 +2,35 @@
 
 int main(){
 
-    int n,i,j,arr[100],elem,pos,temp;
+    const int max = 100;
+    int arr[max];
+    int n,i,j,elem,pos;
 
-    printf("please enter the size of the array");
+    printf("please enter the value of n");
     scanf("%d",&n);
 
     for(i=0;i<n;i++){
-        printf("please enter the %dth element",i);
+        printf("please enter the %d element ",i);
         scanf("%d",&arr[i]);
     }
 
-    printf("enter the element\n");
+    printf("please enter the value of element to be added");
     scanf("%d",&elem);
-    printf("enter the position of the element\n");
+
+    printf("please enter the position at which the element is to be entered");
     scanf("%d",&pos);
 
-    for(i=n;i>=pos;i--){
-        arr[i]=arr[i-1];
+    for(i=n-1;i>=pos-1;i--){
+        arr[i+1]=arr[i];
     }
-    if(pos==1){
-        arr[0]=elem;
-    }
-    else{
-        arr[pos-1]=elem;
-    }
+
+    arr[pos-1] = elem;
     n++;
 
     for(i=0;i<n;i++){
-        printf("%d ",arr[i]);
+        printf("%d\t",arr[i]);
     }
+
 
     return 0;
 }
