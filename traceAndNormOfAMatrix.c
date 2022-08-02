@@ -3,30 +3,33 @@
 
 int main(){
 
-    int n,i,j;
-    float norm=0,trace=0;
     int arr[100][100];
+    int m,n,i,j,trace=0;
+    float norm=0;
 
-    printf("please enter the value of n");
+    printf("please enter the number of rows in the matrix");
+    scanf("%d",&m);
+    printf("please enter the number of columns in  the matrix");
     scanf("%d",&n);
 
-    for(i=0;i<n;i++){
+    for(i=0;i<m;i++){
         for(j=0;j<n;j++){
-            printf("please enter the %d%d element",i,j);
+            printf("please enter the %d %d element",i,j);
             scanf("%d",&arr[i][j]);
         }
     }
 
-    for(i=0;i<n;i++){
+    for(i=0;i<m;i++){
         for(j=0;j<n;j++){
             if(i==j){
-                trace+=arr[i][j];
+                trace += arr[i][j];
             }
-            norm+=pow(arr[i][j],2);
+            norm += arr[i][j];
         }
     }
 
-    printf("the trace of the array is  %f and the norm of the array is %f",trace,sqrt(norm));
+    printf("the trace of the matrix is %d and the norm of the matrix is %f",trace,sqrt(norm));
+
 
     return 0;
 }
