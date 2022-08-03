@@ -3,18 +3,21 @@
 
 int main(){
 
-    const int max=100;
-    char str[max];
     int i=0,count=1;
-    printf("please enter the string\n");
+    char str[100];
+    printf("please enter the string");
     gets(str);
+
     while(str[i]!='\0'){
-        if((str[i]==' ') && (str[i+1]!=' ')){
+
+        if(str[i]==' ' && str[i+1]!=' '){
             count++;
         }
+
         i++;
     }
-    printf("the number of words in the sentence are %d",count);
 
-    return  0 ;
+    printf("the number of words in the sentence is %d",count);
+
+    return 0;
 }

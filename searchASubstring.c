@@ -1,13 +1,12 @@
 #include <stdio.h>
-#include <string.h>
 
 int main(){
-    
-    int i=0,j=0,flag,pos,p,q;
+
+    int i=0,j=0,flag,pos;
     char str[100],word[100];
     printf("please enter the sentence");
     gets(str);
-    printf("please enter the word in the sentence");
+    printf("please enter the word");
     gets(word);
 
     fflush(stdin);
@@ -19,31 +18,25 @@ int main(){
             j=0;
             while(word[j]!='\0'){
                 if(str[i+j]!=word[j]){
-                    flag =0;
+                    flag = 0;
                     break;
                 }
                 j++;
             }
-            if(flag ==1){
+            if(flag == 1){
                 pos = i;
                 break;
             }
         }
-
         i++;
     }
 
-    p = strlen(str);
-    q = strlen(word);
-
-    for(i=pos;i<p-q;i++){
-        str[i]= str[i+q+1];
+    if(flag == 1 ){
+        printf("element found in the sentence at position %d",i+1);
     }
-
-    str[i]='\0';
-    puts(str);
-
-
+    else{
+        printf("element not found in the sentence");
+    }
 
     return 0;
 }
