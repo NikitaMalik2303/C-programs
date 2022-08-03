@@ -1,34 +1,33 @@
 #include <stdio.h>
 #include <string.h>
 
-int check(char str[]){
+int isPalin(char str[],int n){
 
-    int i=0 ,length, flag=0;
-    length = strlen(str);
-    for(i=0;i<=length/2;i++){
-        if(str[i]!=str[length-i-1]){
-            flag = 1;
+    int i=0,flag=1;
+    while(str[i]!='\0'){
+        if(str[i]!=str[n-i-1]){
+            flag = 0;
             break;
         }
-
+        i++;       
     }
     return flag;
-}
 
+}
 
 int main(){
 
-    const int max = 100;
-    char str[max];
-    printf("please enter the value of string to check if it is a palindrome or not\n");
+    char str[100];
+    printf("please enter the string  ");
     gets(str);
 
-    if(check(str)==0){
+    if(isPalin(str,strlen(str))==1){
         printf("the string is a palindrome");
     }
     else{
-        printf("the string is a not a palindrome");
+        printf("the string is not a palindrome");
     }
+
 
     return 0;
 }

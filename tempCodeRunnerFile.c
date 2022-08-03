@@ -1,3 +1,8 @@
-if(colsum[0]!=pdiagnol && colsum[0]!=sdiagnol){
-    //     flag = 0;
+printf("enter the number of prime number you want to print");
+    // scanf("%d",&n);
+    // for(i=0;count<=n;i++){
+    //     if(isPrime(i)==1){
+    //         printf("%d\t",i);
+    //         count++;
+    //     }
     // }
