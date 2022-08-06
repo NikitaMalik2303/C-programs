@@ -12,7 +12,7 @@ int main(){
 
     for(i=0;i<n;i++){
         printf("please enter the %d element",i);
-        scanf("%d",&arr[i]);
+        scanf("%d",&arr[i]); 
     }
 
     fflush(stdin);
